@@ -48,7 +48,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <LevelProvider>
-        <Components {...pageProps} />
+        <Component {...pageProps} />
       </LevelProvider>
     </>
   );
