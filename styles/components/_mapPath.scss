@@ -1,0 +1,161 @@
+.map-path {
+  position: relative;
+  padding: 0 20%;
+  display: flex;
+  justify-content: flex-end;
+
+  &__path {
+    width: 93%;
+    height: auto;
+  }
+
+  &__path-end {
+    width: 93%;
+    height: auto;
+    margin-left: 1%;
+  }
+
+  &__levels {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 0 20%;
+  }
+
+  &__feet {
+    opacity: 0;
+    position: absolute;
+    bottom: -60px;
+    left: 23%;
+
+    path {
+      fill: $primaryColor;
+    }
+
+    @include screen-mobile {
+      bottom: -50px;
+      left: 20%;
+      transform: scale(0.7);
+    }
+  }
+
+  .random-image {
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    top: 40%;
+
+    img {
+      width: 50%;
+    }
+  }
+
+  &:last-child {
+    .random-image {
+      display: none;
+    }
+  }
+
+  // change the style on the end of path
+  &:nth-child(2) {
+    .map-point {
+      align-items: flex-end;
+
+      &:nth-child(1) {
+        padding-bottom: 17%;
+      }
+
+      &:nth-child(2) {
+        padding-bottom: 13%;
+      }
+
+      &:nth-child(3) {
+        padding-bottom: 15%;
+      }
+    }
+  }
+
+  // change the style on even path
+  &:nth-child(even) {
+    justify-content: flex-start;
+
+    .map-path__path {
+      transform: scale(-1, 1);
+    }
+
+    .map-point {
+      &:nth-child(1) {
+        padding-top: 10%;
+      }
+
+      &:nth-child(3) {
+        padding-top: 1%;
+      }
+    }
+
+    .random-image {
+      left: 50%;
+    }
+  }
+
+  // change the style on odd path
+  &:nth-child(odd) {
+    .map-path__feet {
+      transform: scale(-1, 1);
+      left: unset;
+      right: 23%;
+
+      @include screen-mobile {
+        right: 20%;
+        transform: scale(-0.7, 0.7);
+      }
+    }
+
+    .map-point {
+      &:nth-child(1) {
+        padding-top: 2%;
+      }
+
+      &:nth-child(3) {
+        padding-top: 10%;
+      }
+    }
+
+    .random-image {
+      left: 25%;
+
+      @include screen-mobile {
+        img {
+          width: 35%;
+        }
+      }
+    }
+  }
+
+  &:nth-last-child(2) {
+    .random-image {
+      display: none;
+    }
+  }
+
+  &__path,
+  &__path-end {
+    path {
+      stroke: #ff251a;
+      stroke-dasharray: 28 25;
+      stroke-width: 10px;
+    }
+  }
+
+  // show the feet icon on the last of path (or on display will be the start path)
+  &:last-child {
+    margin-bottom: 50px;
+
+    .map-path__feet {
+      opacity: 1;
+    }
+  }
+}

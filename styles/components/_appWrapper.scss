@@ -1,0 +1,8 @@
+.app-wrapper {
+  max-width: $maxWidth;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  position: relative;
+}

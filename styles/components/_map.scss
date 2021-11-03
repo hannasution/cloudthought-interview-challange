@@ -1,0 +1,30 @@
+.map {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15% 0;
+  min-height: 100%;
+  background-image: url("/assets/imgs/top_island.png"),
+    url("/assets/imgs/paper.png");
+  background-size: 65%, 91%;
+  background-position: center top, center 0;
+  background-repeat: no-repeat, repeat-y;
+
+  &.render-bottom-island {
+    background-image: url("/assets/imgs/top_island.png"),
+      url("/assets/imgs/bottom_island.png"), url("/assets/imgs/paper.png");
+    background-size: 65%, 65%, 90%;
+    background-position: center top, center bottom, center 0;
+    background-repeat: no-repeat, no-repeat, repeat-y;
+  }
+
+  &__finish-gate {
+    display: flex;
+    justify-content: center;
+
+    &--image {
+      width: 15%;
+      height: auto;
+    }
+  }
+}

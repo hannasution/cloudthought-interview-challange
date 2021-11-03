@@ -1,0 +1,25 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background-image: url("/assets/imgs/scroll_handle.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  @include screen-mobile {
+    height: 60px;
+  }
+
+  &__h1 {
+    color: $primaryColor;
+    -webkit-text-fill-color: $primaryColor; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #401700;
+
+    @include screen-mobile {
+      font-size: 26px;
+    }
+  }
+}

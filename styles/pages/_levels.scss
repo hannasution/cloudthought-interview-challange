@@ -1,0 +1,36 @@
+.levels {
+  &-level {
+    padding: 0 60px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/assets/imgs/paper-without-water.png"),
+      url("/assets/imgs/paper-empty.png");
+    background-size: 90%, 90%;
+    background-position: top center, center;
+    background-repeat: no-repeat, repeat-y;
+
+    @include screen-mobile {
+      align-items: unset;
+      padding-top: 25%;
+    }
+
+    &__action {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &__description {
+      font-size: 28px;
+      text-align: center;
+      line-height: 28px;
+      margin-bottom: 20px;
+
+      @include screen-mobile {
+        font-size: 22px;
+      }
+    }
+  }
+}
