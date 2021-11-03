@@ -48,9 +48,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <LevelProvider>
-        {Object.entries(retainedComponent.current).map(([path, c]) => {
-          <div className="">ahjdfhjkashdfkjhsdf</div>;
-        })}
+        <Components {...pageProps} />
       </LevelProvider>
     </>
   );
